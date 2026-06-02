@@ -16,7 +16,7 @@ The database structure optimizes storage efficiency and ensures reporting integr
 
 ---
 
-## 🛠️ Technical Implementation Details
+## Technical Implementation Details
 
 ### 1. SQL Extraction Layer (`consulting_extraction_query.sql`)
 Multi-table query designed to generate reporting datasets for consulting stakeholders. Features multi-layered inner joins, conditional cash-margin tracking logic, and positional category ranking:
@@ -35,7 +35,8 @@ SELECT
 FROM fact_transactions AS f
 INNER JOIN dim_merchants AS m ON f.Merchant_ID = m.Merchant_ID
 INNER JOIN dim_hubs AS h ON f.Hub_ID = h.Hub_ID
-WHERE h.Region_City IN ('Riyadh', 'Jeddah');
+WHERE h.Region_City IN ('Riyadh', 'Jeddah')
+;
 ```
 
 ### 2. Advanced Excel Layer (`Saudi_Marketplace_Core.xlsx`)
